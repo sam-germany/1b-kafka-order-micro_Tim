@@ -16,20 +16,19 @@ public class OrderProducer {
     @Autowired
     private KafkaTemplate<String, OrderMessage> kafkaTemplate;
 
-    public void publish(OrderMessage message) {
+    public void publish22(OrderMessage message) {
 
         kafkaTemplate.send("t.commodity.order",message.getOrderNumber(), message)
                      .addCallback(new ListenableFutureCallback<SendResult<String, OrderMessage>>() {
 
                          @Override
                          public void onSuccess(SendResult<String, OrderMessage> result) {
-                                 log.info("Order {}, item {} published successfully",
+                                 log.info("Order {}, item {} published successfully+++++++++",
                                             message.getOrderNumber(), message.getItemName());
                          }
-
                          @Override
                          public void onFailure(Throwable ex) {
-                              log.error("Order {}, item {} failed to publish, because, {}",
+                              log.error("Order {}, item {} failed to publish, because, {}-------",
                                   message.getOrderNumber(), message.getItemName(), ex.getMessage());
                         }
                      });

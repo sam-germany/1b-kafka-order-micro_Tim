@@ -11,8 +11,6 @@ spring:
   h2:
     console:
       enabled: true
-  datasource:
-    url: jdbc:h2:mem:kafkaorderdb
   kafka:
     listener:
       missing-topics-fatal: false
@@ -34,3 +32,16 @@ spring:
           json:
             trusted:
               packages: com.course.kafka.broker.message
+---
+spring:
+  datasource:
+    url: jdbc:mysql://localhost/Tim_Streams?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: 1234
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
