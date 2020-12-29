@@ -11,11 +11,16 @@ sourceCompatibility = '11'
 repositories {
 	mavenCentral()
 }
-
+ext {
+	set('apacheCommonsLang3Version', "3.10")
+}
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.kafka:spring-kafka'
+
+	implementation "org.apache.commons:commons-lang3:${apacheCommonsLang3Version}"
+
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 	runtimeOnly 'com.h2database:h2'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'

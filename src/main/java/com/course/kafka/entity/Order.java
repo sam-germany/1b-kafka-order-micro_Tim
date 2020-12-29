@@ -27,17 +27,6 @@ public class Order {
     @Column(nullable = false,length = 20)
     private String creditCardNumber;
 
-
-
-
-    public String getCreditCardNumber() {
-        return creditCardNumber;
-    }
-
-    public void setCreditCardNumber(String creditCardNumber) {
-        this.creditCardNumber = creditCardNumber;
-    }
-
     public int getOrderId() {
         return orderId;
     }
@@ -78,6 +67,14 @@ public class Order {
         this.items = items;
     }
 
+    public String getCreditCardNumber() {
+        return creditCardNumber;
+    }
+
+    public void setCreditCardNumber(String creditCardNumber) {
+        this.creditCardNumber = creditCardNumber;
+    }
+
     @Override
     public String toString() {
         return "Order{" +
@@ -86,6 +83,7 @@ public class Order {
                 ", orderLocation='" + orderLocation + '\'' +
                 ", orderDateTime=" + orderDateTime +
                 ", items=" + items +
+                ", creditCardNumber='" + creditCardNumber + '\'' +
                 '}';
     }
 }

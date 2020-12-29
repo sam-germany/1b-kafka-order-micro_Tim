@@ -23,15 +23,6 @@ public class OrderItem {
     @ManyToOne
     private Order order;
 
-
-    public Order getOrder() {
-        return order;
-    }
-
-    public void setOrder(Order order) {
-        this.order = order;
-    }
-
     public int getOrderItemId() {
         return orderItemId;
     }
@@ -62,6 +53,14 @@ public class OrderItem {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
+    }
+
+    public Order getOrder() {
+        return order;
+    }
+
+    public void setOrder(Order order) {
+        this.order = order;
     }
 
     @Override
