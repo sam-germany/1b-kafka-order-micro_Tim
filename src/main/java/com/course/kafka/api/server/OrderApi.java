@@ -16,14 +16,18 @@ import org.springframework.web.bind.annotation.RestController;
 public class OrderApi {
 
     @Autowired
-    private OrderService orderService;
+    private OrderService service;
 
     @PostMapping(value = "", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<OrderResponse> createOrder(@RequestBody OrderRequest request) {
+        // 1. save order using service
+        String orderNumber = service.saveOrder(request);
 
-        String orderNumber = orderService.saveOrder(request);
+        // 2. create response
         OrderResponse orderResponse = new OrderResponse(orderNumber);
-        return  ResponseEntity.ok().body(orderResponse);
+
+        // 3. return response
+        return ResponseEntity.ok().body(orderResponse);
     }
 
 

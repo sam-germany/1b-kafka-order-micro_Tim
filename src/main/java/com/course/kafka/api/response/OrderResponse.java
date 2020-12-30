@@ -4,13 +4,12 @@ public class OrderResponse {
 
     private String orderNumber;
 
+    public OrderResponse() {
 
-
-
-
-    public OrderResponse(){}
+    }
 
     public OrderResponse(String orderNumber) {
+        super();
         this.orderNumber = orderNumber;
     }
 
@@ -24,8 +23,6 @@ public class OrderResponse {
 
     @Override
     public String toString() {
-        return "OrderResponse{" +
-                "orderNumber='" + orderNumber + '\'' +
-                '}';
+        return "OrderResponse [orderNumber=" + orderNumber + "]";
     }
 }

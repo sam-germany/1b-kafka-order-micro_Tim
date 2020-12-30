@@ -25,58 +25,56 @@ public class OrderMessage {
 
     private int quantity;
 
-
-
     public String getCreditCardNumber() {
         return creditCardNumber;
-    }
-
-    public void setCreditCardNumber(String creditCardNumber) {
-        this.creditCardNumber = creditCardNumber;
     }
 
     public String getItemName() {
         return itemName;
     }
 
-    public void setItemName(String itemName) {
-        this.itemName = itemName;
-    }
-
     public LocalDateTime getOrderDateTime() {
         return orderDateTime;
-    }
-
-    public void setOrderDateTime(LocalDateTime orderDateTime) {
-        this.orderDateTime = orderDateTime;
     }
 
     public String getOrderLocation() {
         return orderLocation;
     }
 
-    public void setOrderLocation(String orderLocation) {
-        this.orderLocation = orderLocation;
-    }
-
     public String getOrderNumber() {
         return orderNumber;
-    }
-
-    public void setOrderNumber(String orderNumber) {
-        this.orderNumber = orderNumber;
     }
 
     public int getPrice() {
         return price;
     }
 
-    public void setPrice(int price) {
-        this.price = price;
-    }
-
     public int getQuantity() {
         return quantity;
+    }
+
+    public void setCreditCardNumber(String creditCardNumber) {
+        this.creditCardNumber = creditCardNumber;
+    }
+
+    public void setItemName(String itemName) {
+        this.itemName = itemName;
+    }
+
+    public void setOrderDateTime(LocalDateTime orderDateTime) {
+        this.orderDateTime = orderDateTime;
+    }
+
+    public void setOrderLocation(String orderLocation) {
+        this.orderLocation = orderLocation;
+    }
+
+    public void setOrderNumber(String orderNumber) {
+        this.orderNumber = orderNumber;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     public void setQuantity(int quantity) {
@@ -85,14 +83,8 @@ public class OrderMessage {
 
     @Override
     public String toString() {
-        return "OrderMessage{" +
-                "creditCardNumber='" + creditCardNumber + '\'' +
-                ", itemName='" + itemName + '\'' +
-                ", orderDateTime=" + orderDateTime +
-                ", orderLocation='" + orderLocation + '\'' +
-                ", orderNumber='" + orderNumber + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                '}';
+        return "OrderMessage [orderLocation=" + orderLocation + ", orderNumber=" + orderNumber + ", creditCardNumber="
+                + creditCardNumber + ", orderDateTime=" + orderDateTime + ", itemName=" + itemName + ", price=" + price
+                + ", quantity=" + quantity + "]";
     }
 }
