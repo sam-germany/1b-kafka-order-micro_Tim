@@ -22,11 +22,18 @@ public class FeedbackAction {
 		message.setRating(request.getRating());
 
 		// random date time between last 7 days - now
-		message.setFeedbackDateTime(LocalDateTime.now()
-				.minusHours(ThreadLocalRandom.current()
-				.nextLong(7 * 7)));
+message.setFeedbackDateTime(LocalDateTime.now()
+				                         .minusHours(ThreadLocalRandom.current().nextLong(7 * 7))
+		                   );
 
 		producer.publish(message);
 	}
-
 }
+/*
+ThreadLocalRandom  <- it is same as Math.random()  for getting any random number, it is better to
+                      use then Math.random() as it improves performance see  www.tutorialspoint.com
+
+ThreadLocalRandom.current().nextLong(100);  <-- return a Long value between 0 till 99
+                                                    just for understanding i put this example
+
+ */
